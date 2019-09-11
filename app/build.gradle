@@ -11,28 +11,26 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    signingConfigs {
 
+    signingConfigs {
         production {
             storeFile file("../keystore/android_release.keystore")
-            storePassword "chesspuking_release_pass"
-            keyAlias "chesspuking_release"
-            keyPassword "chesspuking_release_pass"
+            storePassword "antonovtetris_release_pass"
+            keyAlias "antonovtetris_release"
+            keyPassword "antonovtetris_release_pass"
         }
 
-//        debug {
-//            storeFile file("../keystore/android_debug.keystore")
-//            storePassword "chesspuking_debug_pass"
-//            keyAlias "chesspuking_debug"
-//            keyPassword "chesspuking_debug_pass"
-//        }
-
+        debug {
+           storeFile file("../keystore/android_debug.keystore")
+            storePassword "antonovtetris_debug_pass"
+            keyAlias "antonovtetris_debug"
+            keyPassword "antonovtetris_debug_pass"
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled true
-            debuggable false
             signingConfig signingConfigs.production
             proguardFiles 'proguard-rules.pro'
         }
